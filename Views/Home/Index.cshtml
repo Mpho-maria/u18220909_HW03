@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<h2>myMedia</h2>
+<h5>Something something foo foo</h5>
+
+<div class="row" style="background-color:gainsboro">
+    <div class="col-md-4">
+        <h2>Description</h2>
+        <p>
+            The user should be able to make a selection
+            of the type of media files they would
+            like to upload on the system.
+            The system should be able to allow the user to
+            choose files from their local storage and save them
+            in the system temporary or permanent system location.
+            all the media files stored
+            in the system should be deletable and downloadable.
+            The user should be able to see bio and picture of the person who did the system.
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h2>Option Selection</h2>
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            <form>
+                <div class="form-group">
+                    @Html.RadioButton("FileType", "Document")<span>Documents</span><br>
+                </div>
+                <div class="form-group">
+                    @Html.RadioButton("FileType", "Image")<span>Images</span><br>
+                </div>
+                <div class="form-group form-check">
+                    @Html.RadioButton("FileType", "Video")<span>Video</span><br>
+                </div>
+                <div class="form-group form-check">
+                    <input type="file" name="file" id="file">
+                </div>
+
+
+
+                <button type="submit" class="btn default">Submit</button>
+            </form>
+        }
+    </div>
+
+</div>
